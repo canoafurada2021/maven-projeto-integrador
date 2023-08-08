@@ -136,49 +136,59 @@ CREATE TABLE IF NOT EXISTS `veiculo`(
 );
 
 
+-- INSERTSSSSSSSSSSSSS -----------------------------------------------------------------------------------------
+-- -------------------------------
 
--- inserts patricia
+-- INSERT TESSTE DE EMPRESA PRE CADASTRADA ------------------------------------------------------
+-- -------------------------------------------------------------------------------------------------
+insert into empresa (razaosocial, telefone, cnpj, nomefantasia, porteEmpresa) values ('O objetivo da empresa é deixar as pessoas felizes andando de gol', '+55 47 992178827', '12.345.678/0001-99', 'Pope Francis Master', 'grande');
+-- ------------------------------------------------------------------------------------------------------
+
+-- inserts ENDERECOS
  insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('95560', '1', 'PO Box 26708', '9th Floor', 'PO Box 59776', '7th Floor');
  insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('95590', '2', 'PO Box 74593', 'Suite 85', 'Apt 359', 'Room 630');
 insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('9899', '3', 'Apt 1550', 'Apt 1844', 'Suite 82', 'Suite 87');
 
-
-
-
+-- inserts CATEGORIAS
 insert into categorias (idcategorias, categoria) values ('1', 'felis');
 insert into categorias (idcategorias, categoria) values ('2', 'justo');
 insert into categorias (idcategorias, categoria) values ('23', 'in lectus');
 insert into categorias (idcategorias, categoria) values ('24', 'sapien ');
 insert into categorias (idcategorias, categoria) values ('25', 'semper');
 
--- inserts emily alves -- corrigidos
-
-
+-- inserts FORNECEDORES
  insert into fornecedores (cnpj,  enderecos_id, nome, telefone) values (82, 1, 'João',  34244624); 
  insert into fornecedores (cnpj,  enderecos_id, nome, telefone) values (83, 2, 'Bruno',  25152528); 
 
-
- 
- ----- CRIAR INSERTS PARA  CRIACAO DE VEICULO NO SISTEMA 
- 
- 
- 
--- inserts andri
+-- inserts VENDEDORES
  insert into vendedores (idVendedores, salario, nome, sobrenome) values (1, 2574.89, 'Garreth', 'Espinoy'  );
 insert into vendedores (idVendedores, salario, nome, sobrenome) values (2, 1883.12, 'Jess', 'McMichan' );
  insert into vendedores (idVendedores, salario, nome, sobrenome  ) values (3,1883.16,'José','carols');
-
  insert into vendedores (idVendedores, salario, nome, sobrenome ) values (4, 1844.79, 'Brigg', 'McNeill');
  insert into vendedores (idVendedores, salario, nome, sobrenome) values (7, 1386.02, 'Sol', 'Winspur');
 insert into vendedores (idVendedores, salario, nome, sobrenome ) values (8, 2896.38, 'Caressa', 'Clair');
 
-
-
+-- inserts LOCADOR
  insert into locador (pessoas_cpf, telContato, nome,  sobrenome, enderecos_id) values ('212213454', '47988', 'Joanna', 'oldey',  1);
  insert into locador (pessoas_cpf,telContato, nome, sobrenome, enderecos_id) values ('768541784', '4798688', 'Miguela', 'Gettens', 3);
  insert into locador (pessoas_cpf,telContato, nome, sobrenome, enderecos_id) values ('103966036', '47984273', 'Olivia', 'Benedito', 2);
 
+-- inserts PRODUTOS
 
+
+
+ ----- CRIAR INSERTS PARA  CRIACAO DE VEICULO NO SISTEMA 
+
+
+
+
+
+
+-- SELECTSSSSSSSSSSSSSSSSSS -----------------------------------------------------------------------------------------
+-- -------------------------------
+
+
+-- SELECT P LISTAGEM
 
 
 
