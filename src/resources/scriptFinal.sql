@@ -175,6 +175,9 @@ insert into vendedores (idVendedores, salario, nome, sobrenome ) values (8, 2896
 
 -- inserts PRODUTOS
 
+-- inserts ALUGUELREGISTROS
+-- TESTE DE LOCAÇÃO PRE CADASTRADA -------------------------------------------------
+insert into aluguelRegistros (idvenda, formaPagamento, data, valor, carrinho, vendedores_idvendedores, locador_pessoas_cpf) values (12, 'Cartão de Crédito em 5 vezes', '2005-10-24', 300, 'tem que tirar esse carrinho', 1, 212213454);
 
 
  ----- CRIAR INSERTS PARA  CRIACAO DE VEICULO NO SISTEMA 
