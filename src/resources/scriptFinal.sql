@@ -81,7 +81,6 @@ CREATE TABLE IF NOT EXISTS `aluguelRegistros` (
   `dataInicio` DATETIME NOT NULL,
   `quantDias` INT NOT NULL,
   `valor` DOUBLE NOT NULL,
-  `carrinho` VARCHAR(45) NOT NULL,
   `vendedores_idvendedores` INT NOT NULL,
   `locador_pessoas_cpf` INT NOT NULL,
   PRIMARY KEY (
