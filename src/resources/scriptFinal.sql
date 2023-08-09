@@ -180,7 +180,7 @@ insert into veiculo (idVeiculo, quantAssento, tipoCambio, quantPortas, espacoPor
 
 -- inserts ALUGUELREGISTROS
 -- TESTE DE LOCAÇÃO PRE CADASTRADA -------------------------------------------------
-insert into aluguelRegistros (idvenda, formaPagamento, dataInicio, quantDias, valor, carrinho, vendedores_idvendedores, locador_pessoas_cpf) values (12, 'Cartão de Crédito em 5 vezes', '2005-10-24', 3, 300, 'tem que tirar esse carrinho', 1, 212213454);
+insert into aluguelRegistros (idvenda, formaPagamento, dataInicio, quantDias, valor, vendedores_idvendedores, locador_pessoas_cpf) values (12, 'Cartão de Crédito em 5 vezes', '2005-10-24', 3, 300, 1, 212213454);
 
 -- inserts LOGIN
 -- TESTE DE POPE FRANCIS MASTER E 1 VENDEDOR PRE CADASTRADOS -------------------------------------------------
