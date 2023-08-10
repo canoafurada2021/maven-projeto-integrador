@@ -78,9 +78,9 @@ CREATE TABLE IF NOT EXISTS `locador` (
 CREATE TABLE IF NOT EXISTS `aluguelRegistros` (
   `idvenda` INT NOT NULL,
   `formaPagamento` VARCHAR(45) NOT NULL,
-  `data` DATETIME NOT NULL,
+  `dataInicio` DATETIME NOT NULL,
+  `quantDias` INT NOT NULL,
   `valor` DOUBLE NOT NULL,
-  `carrinho` VARCHAR(45) NOT NULL,
   `vendedores_idvendedores` INT NOT NULL,
   `locador_pessoas_cpf` INT NOT NULL,
   PRIMARY KEY (
@@ -123,6 +123,7 @@ CREATE TABLE IF NOT EXISTS `veiculo`(
   `espacoPortaMalas` INT NOT NULL,
   `marca` VARCHAR(45) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
+  `cor` VARCHAR(45) NOT NULL,
   `ano` INT NOT NULL,
   `notaAvaliacao` INT NOT NULL,
   `precoPorDia` INT NOT NULL,
@@ -145,8 +146,8 @@ insert into empresa (razaosocial, telefone, cnpj, nomefantasia, porteEmpresa) va
 -- ------------------------------------------------------------------------------------------------------
 
 -- inserts ENDERECOS
- insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('95560', '1', 'PO Box 26708', '9th Floor', 'PO Box 59776', '7th Floor');
- insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('95590', '2', 'PO Box 74593', 'Suite 85', 'Apt 359', 'Room 630');
+insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('95560', '1', 'PO Box 26708', '9th Floor', 'PO Box 59776', '7th Floor');
+insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('95590', '2', 'PO Box 74593', 'Suite 85', 'Apt 359', 'Room 630');
 insert into enderecos (cep, id, rua, bairro, cidade, estado) values ('9899', '3', 'Apt 1550', 'Apt 1844', 'Suite 82', 'Suite 87');
 
 -- inserts CATEGORIAS
@@ -157,21 +158,21 @@ insert into categorias (idcategorias, categoria) values ('24', 'sapien ');
 insert into categorias (idcategorias, categoria) values ('25', 'semper');
 
 -- inserts FORNECEDORES
- insert into fornecedores (cnpj,  enderecos_id, nome, telefone) values (82, 1, 'João',  34244624); 
- insert into fornecedores (cnpj,  enderecos_id, nome, telefone) values (83, 2, 'Bruno',  25152528); 
+insert into fornecedores (cnpj,  enderecos_id, nome, telefone) values (82, 1, 'João',  34244624); 
+insert into fornecedores (cnpj,  enderecos_id, nome, telefone) values (83, 2, 'Bruno',  25152528); 
 
 -- inserts VENDEDORES
- insert into vendedores (idVendedores, salario, nome, sobrenome) values (1, 2574.89, 'Garreth', 'Espinoy'  );
+insert into vendedores (idVendedores, salario, nome, sobrenome) values (1, 2574.89, 'Garreth', 'Espinoy'  );
 insert into vendedores (idVendedores, salario, nome, sobrenome) values (2, 1883.12, 'Jess', 'McMichan' );
- insert into vendedores (idVendedores, salario, nome, sobrenome  ) values (3,1883.16,'José','carols');
- insert into vendedores (idVendedores, salario, nome, sobrenome ) values (4, 1844.79, 'Brigg', 'McNeill');
- insert into vendedores (idVendedores, salario, nome, sobrenome) values (7, 1386.02, 'Sol', 'Winspur');
+insert into vendedores (idVendedores, salario, nome, sobrenome  ) values (3,1883.16,'José','carols');
+insert into vendedores (idVendedores, salario, nome, sobrenome ) values (4, 1844.79, 'Brigg', 'McNeill');
+insert into vendedores (idVendedores, salario, nome, sobrenome) values (7, 1386.02, 'Sol', 'Winspur');
 insert into vendedores (idVendedores, salario, nome, sobrenome ) values (8, 2896.38, 'Caressa', 'Clair');
 
 -- inserts LOCADOR
- insert into locador (pessoas_cpf, telContato, nome,  sobrenome, enderecos_id) values ('212213454', '47988', 'Joanna', 'oldey',  1);
- insert into locador (pessoas_cpf,telContato, nome, sobrenome, enderecos_id) values ('768541784', '4798688', 'Miguela', 'Gettens', 3);
- insert into locador (pessoas_cpf,telContato, nome, sobrenome, enderecos_id) values ('103966036', '47984273', 'Olivia', 'Benedito', 2);
+insert into locador (pessoas_cpf, telContato, nome,  sobrenome, enderecos_id) values ('212213454', '47988', 'Joanna', 'oldey',  1);
+insert into locador (pessoas_cpf,telContato, nome, sobrenome, enderecos_id) values ('768541784', '4798688', 'Miguela', 'Gettens', 3);
+insert into locador (pessoas_cpf,telContato, nome, sobrenome, enderecos_id) values ('103966036', '47984273', 'Olivia', 'Benedito', 2);
 
 -- inserts PRODUTOS
 -- TESTE DE PRODUTO PRE CADASTRADO -------------------------------------------------
@@ -179,11 +180,14 @@ insert into vendedores (idVendedores, salario, nome, sobrenome ) values (8, 2896
 
 -- inserts ALUGUELREGISTROS
 -- TESTE DE LOCAÇÃO PRE CADASTRADA -------------------------------------------------
-insert into aluguelRegistros (idvenda, formaPagamento, data, valor, carrinho, vendedores_idvendedores, locador_pessoas_cpf) values (12, 'Cartão de Crédito em 5 vezes', '2005-10-24', 300, 'tem que tirar esse carrinho', 1, 212213454);
+insert into aluguelRegistros (idvenda, formaPagamento, dataInicio, quantDias, valor, vendedores_idvendedores, locador_pessoas_cpf) values (12, 'Cartão de Crédito em 5 vezes', '2005-10-24', 3, 300, 1, 212213454);
+
+-- inserts LOGIN
+-- TESTE DE POPE FRANCIS MASTER E 1 VENDEDOR PRE CADASTRADOS -------------------------------------------------
+insert into login (id, cpf, senha, tipo_usuario) values (1, '13093824923', '24102005', 'master'), (2, '04807428985', '19101984', 'vendedor');
 
 
- ----- CRIAR INSERTS PARA  CRIACAO DE VEICULO NO SISTEMA 
-
+-- --- CRIAR INSERTS PARA CRIACAO DE VEICULO NO SISTEMA 
 
 
 SELECT * FROM login;
@@ -197,9 +201,4 @@ SELECT * FROM empresa;
 
 
 -- SELECT P LISTAGEM
-
-
-
-
-
 
